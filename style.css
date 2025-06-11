@@ -1,0 +1,605 @@
+/* Importação da Fonte Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* Variáveis de Cores Aprimoradas para Azul */
+:root {
+    --primary-blue: #007bff;        /* Azul principal vibrante */
+    --secondary-blue: #0056b3;      /* Azul mais escuro para acentos */
+    --light-blue: #e0f2ff;          /* Azul muito claro para fundos */
+    --darkest-blue: #0A192F;        /* Azul quase preto para rodapé/texto muito escuro */
+    --text-dark: #333;              /* Cor padrão do texto */
+    --text-light: #f8f9fa;          /* Cor do texto em fundos escuros */
+    --gray-bg: #f8f9fa;             /* Fundo cinza claro quase branco */
+    --white: #ffffff;
+    --red-old-price: #dc3545;       /* Vermelho para preço antigo */
+    --green-guarantee: #28a745;     /* Verde para a garantia */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --shadow-strong: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden; /* Previne rolagem horizontal */
+}
+
+.container {
+    max-width: 1100px; /* Aumentado para mais espaço */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sem Menu, apenas o logo */
+header {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.logo, .footer-logo {
+    max-width: 280px; /* Ajuste o tamanho do seu logo */
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 2px 5px var(--shadow-light)); /* Sombra sutil no logo */
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 18px 35px; /* Padding maior */
+    font-size: 1.2em; /* Fonte maior */
+    font-weight: 700; /* Mais negrito */
+    text-decoration: none;
+    border-radius: 50px; /* Botões bem arredondados */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue)); /* Gradiente azul */
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4); /* Sombra mais pronunciada */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
+    transform: translateY(-3px); /* Efeito de "levantar" */
+    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.5);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Seção Hero (Cabeçalho) */
+.hero-section {
+    background: linear-gradient(160deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); /* Gradiente mais intenso */
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0 80px 0; /* Mais padding inferior */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.hero-section .redline {
+    font-size: 2.8em; /* Frase de impacto maior */
+    font-weight: 800; /* Mais negrito */
+    margin-bottom: 40px;
+    color: var(--white);
+    text-shadow: 0 3px 6px rgba(0,0,0,0.3); /* Sombra mais forte no texto */
+    line-height: 1.2;
+    padding: 0 15px; /* Padding para evitar texto colado nas bordas em mobile */
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 850px; /* Limite a largura do vídeo */
+    margin: 0 auto 50px auto;
+    border-radius: 20px; /* Mais arredondado */
+    box-shadow: 0 15px 40px var(--shadow-strong); /* Sombra mais forte */
+    background-color: var(--darkest-blue); /* Fundo para enquanto o vídeo carrega */
+    border: 5px solid var(--white); /* Borda branca ao redor do vídeo */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Arredondamento interno do iframe */
+}
+
+.hero-cta {
+    margin-top: 40px;
+    font-size: 1.4em;
+    padding: 22px 45px;
+}
+
+/* Seção de Benefícios */
+.benefits-section {
+    background-color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    font-size: 3em; /* Título maior */
+    color: var(--secondary-blue);
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+
+.benefits-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px; /* Linha mais larga */
+    height: 5px; /* Linha mais grossa */
+    background-color: var(--primary-blue);
+    border-radius: 3px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Itens um pouco maiores */
+    gap: 35px; /* Espaçamento maior entre os itens */
+    margin-top: 50px;
+}
+
+.benefit-item {
+    background-color: var(--light-blue); /* Fundo azul claro */
+    padding: 35px;
+    border-radius: 15px; /* Mais arredondado */
+    box-shadow: 0 8px 20px var(--shadow-light); /* Sombra mais suave */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(0, 123, 255, 0.1); /* Borda sutil */
+}
+
+.benefit-item:hover {
+    transform: translateY(-12px); /* Efeito de "levantar" mais acentuado */
+    box-shadow: 0 15px 30px var(--shadow-medium);
+}
+
+.benefit-item img {
+    width: 90px; /* Tamanho dos ícones maior */
+    height: 90px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); /* Sombra nos ícones */
+}
+
+.benefit-item h3 {
+    font-size: 1.6em;
+    color: var(--secondary-blue);
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.benefit-item p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* Seção de Suporte */
+.support-section {
+    background: linear-gradient(90deg, var(--secondary-blue) 0%, var(--primary-blue) 100%); /* Gradiente no suporte */
+    color: var(--white);
+    padding: 70px 0;
+    text-align: center;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.2); /* Sombra interna */
+}
+
+.support-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.support-section p {
+    font-size: 1.2em;
+    margin-bottom: 45px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Seção da Oferta */
+.offer-section {
+    background-color: var(--gray-bg);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.offer-section h2 {
+    font-size: 3em;
+    color: var(--secondary-blue);
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+
+.offer-intro, .offer-urgency {
+    font-size: 1.25em;
+    margin-bottom: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-dark);
+}
+
+.old-price {
+    font-size: 2.2em; /* Preço antigo maior */
+    color: var(--red-old-price);
+    text-decoration: line-through;
+    margin-bottom: 15px;
+    font-weight: 600;
+    opacity: 0.8; /* Um pouco transparente */
+}
+
+.new-price-label {
+    font-size: 1.6em;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.price-highlight {
+    font-size: 4.5em; /* Preço novo GIGANTE */
+    color: var(--primary-blue);
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 10px rgba(0, 123, 255, 0.3); /* Sombra mais forte no preço */
+    letter-spacing: -1px; /* Ajuste para melhor visualização */
+}
+
+.installment-info {
+    font-size: 1.6em;
+    color: var(--secondary-blue);
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.guarantee-box {
+    background-color: var(--white);
+    border: 3px solid var(--green-guarantee); /* Borda mais grossa */
+    border-radius: 15px;
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.2); /* Sombra verde sutil */
+}
+
+.guarantee-box h3 {
+    font-size: 1.8em;
+    color: var(--green-guarantee);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.guarantee-box p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.final-cta {
+    font-size: 1.6em;
+    padding: 28px 55px;
+    margin-top: 50px;
+    animation: pulse 2s infinite; /* Animação para o botão final */
+}
+
+/* Animação para o botão final */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 25px rgba(0, 123, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
+}
+
+
+/* Rodapé */
+footer {
+    background-color: var(--darkest-blue); /* Azul bem escuro */
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Deixa o logo branco no fundo escuro */
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue);
+}
+
+footer p {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%;
+    }
+    .hero-section .redline {
+        font-size: 2.4em;
+    }
+    .benefits-section h2, .support-section h2, .offer-section h2 {
+        font-size: 2.5em;
+    }
+    .price-highlight {
+        font-size: 3.8em;
+    }
+    .final-cta {
+        font-size: 1.4em;
+        padding: 22px 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section .redline {
+        font-size: 2em;
+    }
+    .hero-cta {
+        font-size: 1.2em;
+        padding: 18px 35px;
+    }
+    .benefits-section h2, .support-section h2, .offer-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    .benefit-item {
+        padding: 30px;
+    }
+    .benefit-item img {
+        width: 70px;
+        height: 70px;
+    }
+    .benefit-item h3 {
+        font-size: 1.4em;
+    }
+    .support-section p {
+        font-size: 1em;
+    }
+    .old-price {
+        font-size: 1.8em;
+    }
+    .new-price-label {
+        font-size: 1.4em;
+    }
+    .price-highlight {
+        font-size: 3.2em;
+    }
+    .installment-info {
+        font-size: 1.3em;
+    }
+    .guarantee-box {
+        padding: 30px;
+    }
+    .guarantee-box h3 {
+        font-size: 1.6em;
+    }
+    .final-cta {
+        font-size: 1.2em;
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .hero-section .redline {
+        font-size: 1.6em;
+    }
+    .logo, .footer-logo {
+        max-width: 180px;
+    }
+    .video-container {
+        border-radius: 10px;
+        border-width: 3px;
+    }
+    .benefits-section h2, .support-section h2, .offer-section h2 {
+        font-size: 1.8em;
+    }
+    .benefit-item {
+        padding: 25px;
+    }
+    .benefit-item img {
+        width: 60px;
+        height: 60px;
+    }
+    .benefit-item h3 {
+        font-size: 1.2em;
+    }
+    .old-price {
+        font-size: 1.4em;
+    }
+    .new-price-label {
+        font-size: 1.1em;
+    }
+    .price-highlight {
+        font-size: 2.5em;
+    }
+    .installment-info {
+        font-size: 1.1em;
+    }
+    .guarantee-box {
+        padding: 25px;
+    }
+    .guarantee-box h3 {
+        font-size: 1.3em;
+    }
+    .final-cta {
+        font-size: 1.1em;
+        padding: 18px 30px;
+    }
+}
+
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%;
+    }
+    .hero-section .redline {
+        font-size: 2.4em;
+    }
+    .benefits-section h2, .support-section h2, .offer-section h2 {
+        font-size: 2.5em;
+    }
+    .price-highlight {
+        font-size: 3.8em;
+    }
+    .final-cta {
+        font-size: 1.4em;
+        padding: 22px 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section .redline {
+        font-size: 2em;
+    }
+    .hero-cta {
+        font-size: 1.2em;
+        padding: 18px 35px;
+    }
+    .benefits-section h2, .support-section h2, .offer-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    .benefit-item {
+        padding: 30px;
+    }
+    .benefit-item img {
+        width: 70px;
+        height: 70px;
+    }
+    .benefit-item h3 {
+        font-size: 1.4em;
+    }
+    .support-section p {
+        font-size: 1em;
+    }
+    .old-price {
+        font-size: 1.8em;
+    }
+    .new-price-label {
+        font-size: 1.4em;
+    }
+    .price-highlight {
+        font-size: 3.2em;
+    }
+    .installment-info {
+        font-size: 1.3em;
+    }
+    .guarantee-box {
+        padding: 30px;
+    }
+    .guarantee-box h3 {
+        font-size: 1.6em;
+    }
+    .final-cta {
+        font-size: 1.2em;
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .hero-section .redline {
+        font-size: 1.6em;
+    }
+    .logo, .footer-logo {
+        max-width: 180px;
+    }
+    .video-container {
+        border-radius: 10px;
+        border-width: 3px;
+    }
+    .benefits-section h2, .support-section h2, .offer-section h2 {
+        font-size: 1.8em;
+    }
+    .benefit-item {
+        padding: 25px;
+    }
+    .benefit-item img {
+        width: 60px;
+        height: 60px;
+    }
+    .benefit-item h3 {
+        font-size: 1.2em;
+    }
+    .old-price {
+        font-size: 1.4em;
+    }
+    .new-price-label {
+        font-size: 1.1em;
+    }
+    .price-highlight {
+        font-size: 2.5em;
+    }
+    .installment-info {
+        font-size: 1.1em;
+    }
+    .guarantee-box {
+        padding: 25px;
+    }
+    .guarantee-box h3 {
+        font-size: 1.3em;
+    }
+    .final-cta {
+        font-size: 1.1em;
+        padding: 18px 30px;
+    }
+}
